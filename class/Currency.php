@@ -1,5 +1,5 @@
 <?php
-class PersonsNonGrata
+class Currency
 {
     private $conn;
 
@@ -13,23 +13,28 @@ class PersonsNonGrata
 
     public function get()
     {
-        $stmt =  $this->conn->prepare("SELECT * FROM personsng");
+        $stmt =  $this->conn->prepare("SELECT * FROM currency_rate_to_RUB");
         $stmt->execute();
         return $stmt->fetchAll();
     }
     public function update($arr)
     {
         try {
-
             $this->conn->beginTransaction();
-            $this->conn->exec("DELETE FROM personsng");
-            $stmt = $this->conn->prepare('INSERT INTO personsng (Name, Description, Photo) VALUES (:value, :description, :photo)');
+            $this->conn->exec("DELETE FROM currency_rate_to_RUB");
+            $stmt = $this->conn->prepare('INSERT INTO currency_rate_to_RUB (currency, feb23, today, diff, diff_percentage) 
+                                VALUES (:currency, :feb23, :today, :diff, :diff_percentage)');
             for ($i = 0; $i < count($arr); $i++) {
-                $stmt->execute(array('value' => $arr[$i][0], 'description' => $arr[$i][1], 'photo' => $arr[$i][2]));
+                $stmt->execute(array(
+                    'currency' => $arr[$i][0],
+                    'feb23' => $arr[$i][1],
+                    'today' => $arr[$i][2],
+                    'diff' => $arr[$i][3],
+                    'diff_percentage' => $arr[$i][4]
+                ));
             }
             $this->conn->commit();
-
-            echo "New records created/updated successfully";
+            echo "Currency rate updated successfully";
         } catch (PDOException $e) {
             $this->conn->rollback();
             echo "Error: " . $e->getMessage();
