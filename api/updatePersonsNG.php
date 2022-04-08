@@ -12,9 +12,9 @@ try {
 
     $conn->beginTransaction();
     $conn->exec("DELETE FROM personsng");
-    $stmt = $conn->prepare('INSERT INTO personsng (Name) VALUES (:value)');
+    $stmt = $conn->prepare('INSERT INTO personsng (Name, Description, Photo) VALUES (:value, :description, :photo)');
     for ($i = 0; $i < count($arr); $i++) {
-        $stmt->execute(array('value' => $arr[$i][0]));
+        $stmt->execute(array('value' => $arr[$i][0], 'description' => $arr[$i][1], 'photo' => $arr[$i][2]));
     }
     $conn->commit();
 
