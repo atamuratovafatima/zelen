@@ -68,12 +68,9 @@
             </div>
             <div class="header__flex-item">
                 <main class="currency">
-
-
                     <table class="main__table-container">
-
                         <tr>
-                            <th class="main__table-list">Currency ET</th>
+                            <th class="main__table-list">Currency</th>
                             <th class="main__table-list">23 feb</th>
                             <th class="main__table-list">today</th>
                             <th class="main__table-list">diff</th>
@@ -81,14 +78,11 @@
                         </tr>
                         <?php
                         require_once($_SERVER['DOCUMENT_ROOT'] . '/class/Currency.php');
-
                         $curr = new Currency;
                         $curr_list = $curr->get();
                         $curr->close();
                         for ($i = 0; $i < count($curr_list); $i++) {
-
                         ?>
-
                             <tr>
                                 <td class="main__table-list">
                                     <div class="list__flex-container">
@@ -104,19 +98,7 @@
                                 <td class="main__table-list"><?php echo round($curr_list[$i]['diff_percentage'] * 100, 1) ?> %</td>
                             </tr>
                         <?php } ?>
-
-
-
-
                     </table>
-
-
-
-
-
-
-
-
                 </main>
             </div>
 
@@ -135,86 +117,6 @@
                     <li class="flex__list">
                         <div class="flex__img-container">
                             <img src="./assets/img/logos/1.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/2.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/1.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/4.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos//2.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/6.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/7.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/2.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/6.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/4.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/7.jpg" alt="">
                         </div>
                         <div class="flex__hover-container">
                             <p class="flex-hover">Logo name</p>
