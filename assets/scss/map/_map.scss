@@ -7,6 +7,7 @@
         color: $color-white;
         text-align: center;
         text-transform: uppercase;
+        margin-top: 5em;
     }
     &__btn{
         padding: 1em 2em 1em 2em;
@@ -81,5 +82,5 @@
         transition: .2s;
         position: absolute;
     }
-
+ 
 }

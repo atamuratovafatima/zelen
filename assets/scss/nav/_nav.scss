@@ -1,23 +1,31 @@
+.lang{
+    padding: .8em 1em;
+    @include font-nunitosans(16px);
+    color: $color-white;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: .2s;
+
+    &:hover{
+        font-weight: bold;
+        color: $color-white;
+        transition: .2s;
+    }
+    &__container{
+        @include flex(flex-end, center);
+    }
+
+}
+
 .nav{
     background: rgb(95,39,205);
     background: radial-gradient(circle, rgba(95,39,205,1) 0%, rgba(41,24,122,1) 100%);
-    margin-top: 2em;
     @include font-nunitosans(18px);
     color: $color-white;
+    height: 3em;
 
-    &__container{
-        @include flex(space-between, center);
-        padding: .5em 0;
-    }
-    &__list-item{
-        display: inline-block;
-        padding: .5em 1em;
-    }
-    &__lang{
-        padding: .5em 1em;
-        &-container{
-            @include flex(space-between, center);
-        }
-
-    }
+    // &__list-item{
+    //     padding: .5em 1em;
+    // }
+    
 }

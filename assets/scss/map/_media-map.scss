@@ -1,0 +1,14 @@
+@media screen and (min-width:320px) {
+    .map{
+        &__title{
+            margin-top: 3em;
+        }
+    }
+}
+@media screen and (min-width:769px) {
+    .map{
+        &__title{
+            margin-top: 4em;
+        }
+    }
+}

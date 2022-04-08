@@ -4,17 +4,46 @@
 @import './fonts';
 
 @import './nav/nav';
+@import './nav/media-nav';
+
 @import './main/main';
+@import './main/media-main';
+
 @import './map/map';
+@import './map/media-map';
+
 @import './people/people';
+@import './people/media-people';
+
+@import './header/header';
+@import './header/media-header';
 
 *{
     transition: .2s;
 }
+
 body{
     background:rgba(41,24,122,1);
     background: radial-gradient(circle, rgba(95,39,205,1) 0%, rgba(41,24,122,1) 100%);
+    position: relative;
 }
+body, .main__losses{
+
+    &::-webkit-scrollbar {
+        width: 1.5em;
+        background-color: rgba($color: #A9D2FF, $alpha: .3);
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(95,39,205,1);
+        border-radius: 2px;
+        height: 10%;
+        outline: 0px solid #A9D2FF;
+    }
+}
+
 
 .container{
     max-width: 100%;

@@ -1,8 +1,15 @@
 .main{
-    
+    &__title{
+        @include font-nunitosans(30px);
+        color: $color-white;
+        text-align: center;
+        text-transform: uppercase;
+    }    
+    &__losses{
+        overflow-x: auto;
+    }
     & .container{
         padding: 1em 0;
-
 
         .flex{
             &__img-container{
@@ -16,7 +23,7 @@
 
                 &-container{
                     position: absolute;
-                    height: 100%;
+                    height: auto;
                     width: 100%;
                     transition: .1s;
                     transform: translateX(0);
@@ -45,11 +52,14 @@
         &-container{
             border-collapse: collapse;
             border-spacing:0;
-            margin: 5% 0;
+            margin: 1.5em 0;
             width:100%;
 
-            & th{
+            & th, & td{
                 @include font-nunitosans(16px, bold);
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
             }
         }
         
@@ -120,14 +130,17 @@
             content: "\f0ca";
         }
         &.card::before{
-            content: "\f0ca";
+            content: "\e196";
         }
     }
     &__btn-title{
         color: $color-white;
         @include font-nunitosans(30px);
         text-align: center;
-        margin-top: 2em;
+        margin-top: -1em;
         text-transform: uppercase;
+    }
+    & .margin-top{
+        margin-top: 5%;
     }
 }   

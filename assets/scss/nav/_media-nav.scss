@@ -1,0 +1,78 @@
+@media screen and (min-width:320px) {
+    .nav{
+
+        &__container{
+            @include flex(center, flex-start);
+            position: absolute;
+            transform: translateX(-100%);
+            transition: .5s;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background-color: rgba($color: #000000, $alpha: .9);
+            z-index: 1;
+        }
+
+        .burger-icon{
+            position: relative;
+            display: inline-block;
+            @include flex(flex-start, center);
+            height: 3em;
+        }
+        input[type='checkbox']{
+            position: absolute;
+            top: -1em;
+            .burger-icon{
+                z-index: 4;
+            }
+            &:checked {
+                & + label + .nav__container{
+                    transform: translateX(0);
+                    transition: .5s;
+                    z-index: 2;
+                }
+                & + .burger-icon{
+                    z-index: 4;
+                    position: absolute;
+                    visibility: visible;
+                }
+            }
+
+
+        }
+        &__list-item{
+            padding: 2em 1em;
+
+            &:first-child{
+                padding-top: 3em;
+            }
+        }
+    }
+}
+@media screen and (min-width:768px) {
+    .nav{
+        &__container{
+            @include flex(space-around, center);
+            padding: .5em 0;
+            position: static;
+            transform: none;
+            background-color: unset
+        }
+
+        &__list-item{
+            display: inline-block;
+            padding: .5em 1em;
+
+            &:first-child{
+                padding-top: unset;
+            }
+        }
+        .burger-icon{
+            position: absolute;
+            left: 0;
+            visibility: hidden;
+        }
+    }
+}

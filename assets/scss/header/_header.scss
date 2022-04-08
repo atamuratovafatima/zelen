@@ -1,0 +1,58 @@
+.header{
+    &__flex{
+        &-container{
+            @include flex(space-between, flex-start);
+            height: 12em;
+            overflow: hidden;
+            margin: 2em 0 0 0;
+        }
+        &-item{
+            &:first-child{
+                flex-basis: 55%;
+
+                .banner{
+                    width: 100%;
+                    height: auto;
+
+                    &__container{
+                        position: relative;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.currency{
+
+    & .main__table{
+        &-container{
+    
+            & tr:first-child{
+                border-bottom: 2px solid $color-blue;
+            }
+            & th{
+                text-transform: uppercase;
+                padding: .7em .5em;
+            }
+        }
+    }
+    & .list{
+        &__flex-container{
+            @include flex(flex-start, center);
+            
+        }
+        &__img{
+            width: 40%;
+            @include flex(center, center);
+        }
+        &__name{
+            width: 60%;
+        }
+    }
+ 
+}
+.canvas{
+    width: 100%;
+}
