@@ -84,6 +84,7 @@
 
                         $curr = new Currency;
                         $curr_list = $curr->get();
+                        $curr->close();
                         for ($i = 0; $i < count($curr_list); $i++) {
 
                         ?>

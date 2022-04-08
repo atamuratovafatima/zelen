@@ -5,7 +5,7 @@ class Currency
 
     function __construct()
     {
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/db_conn.php');
+        require($_SERVER['DOCUMENT_ROOT'] . '/db_conn.php');
         $this->conn = new PDO("mysql:host=$DB_SERVER;dbname=$DB_DATABASE", $DB_USER, $DB_PASSWORD);
         $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -39,5 +39,9 @@ class Currency
             $this->conn->rollback();
             echo "Error: " . $e->getMessage();
         }
+    }
+    public function close()
+    {
+        $this->conn = null;
     }
 }
