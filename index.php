@@ -86,13 +86,13 @@
                                         <div class="list__img">
                                             <img src="./assets/img/currency/USD.png" alt="usd">
                                         </div>
-                                        <p class="list__name"><? $curr_list[$i]['currency'] ?></p>
+                                        <p class="list__name"><?php echo $curr_list[$i]['currency'] ?></p>
                                     </div>
                                 </td>
-                                <td class="main__table-list"><? $curr_list[$i]['feb23'] ?></td>
-                                <td class="main__table-list"><? $curr_list[$i]['today'] ?></td>
-                                <td class="main__table-list"><? $curr_list[$i]['diff'] ?></td>
-                                <td class="main__table-list"><? $curr_list[$i]['diff_percentage'] ?></td>
+                                <td class="main__table-list"><?php echo $curr_list[$i]['feb23'] ?></td>
+                                <td class="main__table-list"><?php echo $curr_list[$i]['today'] ?></td>
+                                <td class="main__table-list"><?php echo $curr_list[$i]['diff'] ?></td>
+                                <td class="main__table-list"><?php echo $curr_list[$i]['diff_percentage'] ?></td>
                             </tr>
                         <?php } ?>
 
