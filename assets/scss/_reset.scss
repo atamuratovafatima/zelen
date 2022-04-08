@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style-type: none;
+}
+a, a:hover, a:focus, a:active{
+    text-decoration: none;
+    color: inherit;
+    // all: unset;
+}
+h1, h2, h3, h4, h5, p, form, ul, li, form, a{
+    margin: 0;
+    padding: 0;
+}
+// body{
+//    overflow-x: hidden;
+// }
+input, textarea{
+    background: rgb(255, 255, 255);
+}
+
+input{
+    border: none;
+    border-radius: 0px;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+  

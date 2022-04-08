@@ -1,0 +1,49 @@
+@import './reset';
+@import './mixins';
+@import './variables';
+@import './fonts';
+
+@import './nav/nav';
+@import './main/main';
+@import './map/map';
+@import './people/people';
+
+*{
+    transition: .2s;
+}
+body{
+    background:rgba(41,24,122,1);
+    background: radial-gradient(circle, rgba(95,39,205,1) 0%, rgba(41,24,122,1) 100%);
+}
+
+.container{
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+@media screen and (min-width:320px){
+    .container{
+        max-width: 320px;
+    }
+}
+@media screen and (min-width:481px){
+    .container{
+        max-width: 481px;
+    }
+}
+@media screen and (min-width:769px){
+    .container{
+        max-width: 769px;
+    }
+}
+@media screen and (min-width:1024px){
+    .container{
+        max-width: 1024px;
+    }
+}
+@media screen and (min-width:1169px){
+    .container{
+        max-width: 1200px;
+    }
+}
+

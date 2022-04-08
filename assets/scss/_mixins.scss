@@ -1,0 +1,33 @@
+@mixin flex($justify-content, $align-items, $direction:row, $wrap:wrap) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+@mixin font-nunitosans($size, $weight:400) {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+
+@mixin p-absolute($top:auto, $right:auto, $bottom:auto, $left:auto){
+    position: absolute;
+    top: $top;
+    right: $right;
+    left: $left;
+    bottom: $bottom;
+}
+@mixin fontawesome-solid($color){
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: inline-block;
+    color: $color;
+}
+@mixin fontawesome-brand($color){
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    display: inline-block;
+    color: $color;
+}

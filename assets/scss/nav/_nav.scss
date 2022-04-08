@@ -1,0 +1,23 @@
+.nav{
+    background: rgb(95,39,205);
+    background: radial-gradient(circle, rgba(95,39,205,1) 0%, rgba(41,24,122,1) 100%);
+    margin-top: 2em;
+    @include font-nunitosans(18px);
+    color: $color-white;
+
+    &__container{
+        @include flex(space-between, center);
+        padding: .5em 0;
+    }
+    &__list-item{
+        display: inline-block;
+        padding: .5em 1em;
+    }
+    &__lang{
+        padding: .5em 1em;
+        &-container{
+            @include flex(space-between, center);
+        }
+
+    }
+}

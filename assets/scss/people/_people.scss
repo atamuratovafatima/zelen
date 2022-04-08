@@ -1,0 +1,39 @@
+.people{
+    margin-top: 5em;
+    &__list{
+        width: 30%;
+
+        &-container{
+            @include flex(space-between, center);
+        }
+        &-item{
+            @include flex(flex-start, flex-start);
+            margin-top: 1em;   
+        }
+    }
+    &__description{
+        @include font-nunitosans(16px);
+        padding-top: 1em;
+        color: $color-white;
+
+        &-text{
+            @include font-nunitosans(14px);
+            padding-top: .5em;
+            color: rgba($color: $color-white, $alpha: .6);
+        }
+    }
+    &__avatar{
+        width: 6em;
+        height: 6em;
+        border-radius: 50%;
+        &-container{
+            margin-right: 1em;
+        }
+    }
+    &__title{
+        @include font-nunitosans(30px);
+        color: $color-white;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+}
