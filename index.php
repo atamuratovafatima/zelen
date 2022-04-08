@@ -10,6 +10,12 @@
     <link rel="stylesheet" type="text/css" href="/css/swiper/slick.css" />
     <link rel="stylesheet" type="text/css" href="/css/swiper/slick-theme.css" />
     <script src="https://kit.fontawesome.com/67e895b2e2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/js/slick-slider/jquery-1.11.0.min.js" defer async></script>
+    <script type="text/javascript" src="./assets/js/slick-slider/jquery-migrate-1.2.1.min.js" defer async></script>
+    <script type="text/javascript" src="./assets/js/slick-slider/slick.min.js" defer async></script>
+    <script type="text/javascript" src="./assets/js/slick-slider/slick-styles__example.js" defer async></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" defer async></script>
+    <script type="text/javascript" src="./assets/js/chart.styles.js" defer async> </script>
     <title>UK and RU</title>
 </head>
 
@@ -52,6 +58,7 @@
             </div>
         </div>
     </nav>
+
     <div class="container">
         <div class="header__flex-container">
             <div class="header__flex-item">
@@ -61,6 +68,7 @@
             </div>
             <div class="header__flex-item">
                 <main class="currency">
+
 
                     <table class="main__table-container">
 
@@ -76,10 +84,10 @@
 
                         $curr = new Currency;
                         $curr_list = $curr->get();
-
                         for ($i = 0; $i < count($curr_list); $i++) {
 
                         ?>
+
                             <tr>
                                 <td class="main__table-list">
                                     <div class="list__flex-container">
@@ -89,14 +97,25 @@
                                         <p class="list__name"><?php echo $curr_list[$i]['currency'] ?></p>
                                     </div>
                                 </td>
-                                <td class="main__table-list"><?php echo $curr_list[$i]['feb23'] ?></td>
-                                <td class="main__table-list"><?php echo $curr_list[$i]['today'] ?></td>
-                                <td class="main__table-list"><?php echo $curr_list[$i]['diff'] ?></td>
-                                <td class="main__table-list"><?php echo $curr_list[$i]['diff_percentage'] ?></td>
+                                <td class="main__table-list"><?php echo round($curr_list[$i]['feb23'], 2) ?></td>
+                                <td class="main__table-list"><?php echo round($curr_list[$i]['today'], 2) ?></td>
+                                <td class="main__table-list"><?php echo round($curr_list[$i]['diff'], 2) ?></td>
+                                <td class="main__table-list"><?php echo round($curr_list[$i]['diff_percentage'] * 100, 1) ?> %</td>
                             </tr>
                         <?php } ?>
 
+
+
+
                     </table>
+
+
+
+
+
+
+
+
                 </main>
             </div>
 
@@ -388,17 +407,9 @@
             </table>
         </main>
 
-
-
     </div>
 
 
-    <script type="text/javascript" src="./assets/js/slick-slider/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="./assets/js/slick-slider/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="./assets/js/slick-slider/slick.min.js"></script>
-    <script type="text/javascript" src="./assets/js/slick-slider/slick-styles__example.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-    <script type="text/javascript" src="./assets/js/chart.styles.js"> </script>
 </body>
 
 </html>
