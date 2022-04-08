@@ -13,7 +13,7 @@ try {
     $conn->beginTransaction();
     $conn->exec("DELETE FROM currency_rate_to_RUB");
     $stmt = $conn->prepare('INSERT INTO currency_rate_to_RUB (currency, feb23, today, diff, diff_percentage) 
-                            VALUES (:currency, :feb23, :today, diff, diff_percentage)');
+                            VALUES (:currency, :feb23, :today, :diff, :diff_percentage)');
     for ($i = 0; $i < count($arr); $i++) {
         $stmt->execute(array(
             'currency' => $arr[$i][0],
