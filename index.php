@@ -285,8 +285,8 @@
                                 <img src="./assets/img/ava/images.png" class="people__avatar" alt="">
                             </div>
                             <div class="people__description-container">
-                                <p class="people__description"><?php echo $personsNG_list[$i]['Name']   ?></p>
-                                <p class="people__description-text">Lorem ipsum dolor sit amet.</p>
+                                <p class="people__description"><?php echo $personsNG_list[$i]['Name'] ?></p>
+                                <p class="people__description-text"><?php echo $personsNG_list[$i]['Description'] ?></p>
                             </div>
                         </a>
                     </li>
