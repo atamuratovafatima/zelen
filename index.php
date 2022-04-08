@@ -61,7 +61,9 @@
             </div>
             <div class="header__flex-item">
                 <main class="currency">
+
                     <table class="main__table-container">
+
                         <tr>
                             <th class="main__table-list">Currency ET</th>
                             <th class="main__table-list">23 feb</th>
@@ -69,34 +71,31 @@
                             <th class="main__table-list">diff</th>
                             <th class="main__table-list">diff%</th>
                         </tr>
-                        <tr>
-                            <td class="main__table-list">
-                                <div class="list__flex-container">
-                                    <div class="list__img">
-                                        <img src="./assets/img/currency/USD.png" alt="usd">
+                        <?php
+                        require_once($_SERVER['DOCUMENT_ROOT'] . '/class/Currency.php');
+
+                        $curr = new Currency;
+                        $curr_list = $curr->get();
+
+                        for ($i = 0; $i < count($curr_list); $i++) {
+
+                        ?>
+                            <tr>
+                                <td class="main__table-list">
+                                    <div class="list__flex-container">
+                                        <div class="list__img">
+                                            <img src="./assets/img/currency/USD.png" alt="usd">
+                                        </div>
+                                        <p class="list__name"><? $curr_list[$i]['currency'] ?></p>
                                     </div>
-                                    <p class="list__name">USD</p>
-                                </div>
-                            </td>
-                            <td class="main__table-list">lorem2</td>
-                            <td class="main__table-list">lorem3</td>
-                            <td class="main__table-list">lorem4</td>
-                            <td class="main__table-list">lorem5</td>
-                        </tr>
-                        <tr>
-                            <td class="main__table-list">
-                                <div class="list__flex-container">
-                                    <div class="list__img">
-                                        <img src="./assets/img/currency/RUB.png" alt="rub">
-                                    </div>
-                                    <p class="list__name">RUB</p>
-                                </div>
-                            </td>
-                            <td class="main__table-list">lorem2</td>
-                            <td class="main__table-list">lorem3</td>
-                            <td class="main__table-list">lorem4</td>
-                            <td class="main__table-list">lorem5</td>
-                        </tr>
+                                </td>
+                                <td class="main__table-list"><? $curr_list[$i]['feb23'] ?></td>
+                                <td class="main__table-list"><? $curr_list[$i]['today'] ?></td>
+                                <td class="main__table-list"><? $curr_list[$i]['diff'] ?></td>
+                                <td class="main__table-list"><? $curr_list[$i]['diff_percentage'] ?></td>
+                            </tr>
+                        <?php } ?>
+
                     </table>
                 </main>
             </div>
