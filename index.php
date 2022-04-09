@@ -198,27 +198,6 @@
                         <img src="./assets/img/map/world.svg" alt="world map">
                     </div>
                 </div>
-
-                <div class="map__rusanction-container">
-                    <div class="map__rusanction">
-                        <h1 class="map__rusanction-title">Sunction to RU</h1>
-                        <img src="./assets/img/map/world.svg" alt="world map">
-                    </div>
-                </div>
-
-                <div class="map__novisa-container">
-                    <div class="map__novisa">
-                        <h1 class="map__novisa-title">No enter visa</h1>
-                        <img src="./assets/img/map/world.svg" alt="world map">
-                    </div>
-                </div>
-
-                <div class="map__ruposition-container">
-                    <div class="map__ruposition">
-                        <h1 class="map__ruposition-title">Position to RU</h1>
-                        <img src="./assets/img/map/world.svg" alt="world map">
-                    </div>
-                </div>
             </div>
         </section>
         <div class="canvas">
