@@ -5,6 +5,10 @@ let coutriesList = document
   .querySelectorAll("path")
 */
 
+document.addEventListener("DOMContentLoaded", function (event) {
+  clearColors()
+})
+
 getMapState()
 
 document
@@ -52,7 +56,6 @@ function setColorWorldMap(event) {
   })
 }
 
-clearColors()
 function clearColors() {
   let countries = JSON.parse(localStorage.mapState)
   countries.forEach(function (c) {
