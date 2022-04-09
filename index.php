@@ -172,8 +172,6 @@
                         <td class="main__table-list"><?php echo $losses_list[$i]['total_ru_forces'] ?></td>
                         <td class="main__table-list"><?php echo $losses_list[$i]['ru_losses_by_ukr_news'] ?></td>
                         <td class="main__table-list"><?php echo $losses_list[$i]['ru_losses_by_ru_news'] ?></td>
-
-
                     </tr>
                 <?php } ?>
             </table>
