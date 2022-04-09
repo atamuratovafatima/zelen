@@ -16,6 +16,7 @@
     <script type="text/javascript" src="./assets/js/slick-slider/slick-styles__example.js" defer async></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" defer async></script>
     <script type="text/javascript" src="./assets/js/chart.styles.js" defer async> </script>
+    <script src="./js/main.js" defer></script>
     <title>UK and RU</title>
 </head>
 
@@ -195,7 +196,8 @@
                 <div class="map__airspace-container">
                     <div class="map__airspace">
                         <h1 class="map__airspace-title">Air space</h1>
-                        <img src="./assets/img/map/world.svg" alt="world map">
+                        <object class="svgWorldMap" type="image/svg+xml" data="./assets/img/map/world2.svg"></object>
+                        <!-- document.querySelector(".svgWorldMap").getSVGDocument().getElementById("RU").style.fill = "red" -->
                     </div>
                 </div>
             </div>
