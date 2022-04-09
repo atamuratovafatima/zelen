@@ -146,7 +146,7 @@
             <table class="main__table-container">
                 <tr>
                     <th class="main__table-list" rowspan="2">AU</th>
-                    <th class="main__table-list" rowspan="2">Lorem</th>
+
                     <th class="main__table-list" rowspan="2">Total Ukraine forces</th>
                     <th class="main__table-list" colspan="2">Ukraine losses</th>
                     <th class="main__table-list" rowspan="2">Total Russian forces</th>
@@ -158,36 +158,24 @@
                     <th class="main__table-list">by Ukraine news</th>
                     <th class="main__table-list">by Russia news</th>
                 </tr>
-                <tr>
-                    <td class="main__table-list">lorem ipsum 1</td>
-                    <td class="main__table-list">lorem ipsum 2</td>
-                    <td class="main__table-list">lorem ipsum 3</td>
-                    <td class="main__table-list">lorem ipsum 4</td>
-                    <td class="main__table-list">lorem ipsum 5</td>
-                    <td class="main__table-list">lorem ipsum 6</td>
-                    <td class="main__table-list">lorem ipsum 7</td>
-                    <td class="main__table-list">lorem ipsum 8</td>
-                </tr>
-                <tr>
-                    <td class="main__table-list">lorem ipsum 1</td>
-                    <td class="main__table-list">lorem ipsum 2</td>
-                    <td class="main__table-list">lorem ipsum 3</td>
-                    <td class="main__table-list">lorem ipsum 4</td>
-                    <td class="main__table-list">lorem ipsum 5</td>
-                    <td class="main__table-list">lorem ipsum 6</td>
-                    <td class="main__table-list">lorem ipsum 7</td>
-                    <td class="main__table-list">lorem ipsum 8</td>
-                </tr>
-                <tr>
-                    <td class="main__table-list">lorem ipsum 1</td>
-                    <td class="main__table-list">lorem ipsum 2</td>
-                    <td class="main__table-list">lorem ipsum 3</td>
-                    <td class="main__table-list">lorem ipsum 4</td>
-                    <td class="main__table-list">lorem ipsum 5</td>
-                    <td class="main__table-list">lorem ipsum 6</td>
-                    <td class="main__table-list">lorem ipsum 7</td>
-                    <td class="main__table-list">lorem ipsum 8</td>
-                </tr>
+                <?php
+                require_once($_SERVER['DOCUMENT_ROOT'] . '/class/Losses.php');
+                $losses = new Losses;
+                $losses_list = $losses->get();
+                for ($i = 0; $i < count($losses_list); $i++) {
+                ?>
+                    <tr>
+                        <td class="main__table-list"><?php echo $losses_list[$i]['type'] ?></td>
+                        <td class="main__table-list"><?php echo $losses_list[$i]['total_ukr_forces'] ?></td>
+                        <td class="main__table-list"><?php echo $losses_list[$i]['ukr_losses_by_ukr_news'] ?></td>
+                        <td class="main__table-list"><?php echo $losses_list[$i]['ukr_losses_by_ru_news'] ?></td>
+                        <td class="main__table-list"><?php echo $losses_list[$i]['total_ru_forces'] ?></td>
+                        <td class="main__table-list"><?php echo $losses_list[$i]['ru_losses_by_ukr_news'] ?></td>
+                        <td class="main__table-list"><?php echo $losses_list[$i]['ru_losses_by_ru_news'] ?></td>
+
+
+                    </tr>
+                <?php } ?>
             </table>
         </section>
         <section class="map">
