@@ -5,10 +5,6 @@ let coutriesList = document
   .querySelectorAll("path")
 */
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  setColorWorldMap()
-})
-
 getMapState()
 
 document
