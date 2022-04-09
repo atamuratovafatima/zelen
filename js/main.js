@@ -6,7 +6,7 @@ let coutriesList = document
 */
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  clearColors()
+  setColorWorldMap()
 })
 
 getMapState()
@@ -53,15 +53,5 @@ function setColorWorldMap(event) {
     } else {
       countryOnMap.style.fill = "white"
     }
-  })
-}
-
-function clearColors() {
-  let countries = JSON.parse(localStorage.mapState)
-  countries.forEach(function (c) {
-    document
-      .querySelector(".svgWorldMap")
-      .getSVGDocument()
-      .getElementById(c["Country_code"]).style.fill = "white"
   })
 }
