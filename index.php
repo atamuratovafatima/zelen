@@ -114,32 +114,27 @@
                 <label for="logo-list" class="main__radio-btn list">Spisok</label>
 
                 <ul class="flex__list-container">
-                    <li class="flex__list">
-                        <div class="flex__img-container">
-                            <img src="./assets/img/logos/1.jpg" alt="">
-                        </div>
-                        <div class="flex__hover-container">
-                            <p class="flex-hover">Logo name</p>
-                        </div>
-                    </li>
+                    <?php
+                    require_once($_SERVER['DOCUMENT_ROOT'] . '/class/CompaniesLeaved.php');
+                    $companiesLeaved = new CompaniesLeaved;
+                    $companiesLeaved_list = $companiesLeaved->get();
+                    for ($i = 0; $i < count($companiesLeaved_list); $i++) {
+
+                    ?>
+                        <li class="flex__list">
+                            <div class="flex__img-container">
+                                <img src="<?php echo $companiesLeaved_list[$i]['Logo']  ?>" alt="">
+                            </div>
+                            <div class="flex__hover-container">
+                                <p class="flex-hover"><?php echo $companiesLeaved_list[$i]['CompanyName']  ?></p>
+                            </div>
+                        </li>
+                    <?php } ?>
                 </ul>
                 <ul class="main__logo-container">
-                    <li class="main__logo-list">lorem 1</li>
-                    <li class="main__logo-list">lorem 2</li>
-                    <li class="main__logo-list">lorem 3</li>
-                    <li class="main__logo-list">lorem 4</li>
-                    <li class="main__logo-list">lorem 5</li>
-                    <li class="main__logo-list">lorem 6</li>
-                    <li class="main__logo-list">lorem 7</li>
-                    <li class="main__logo-list">lorem 8</li>
-                    <li class="main__logo-list">lorem 9</li>
-                    <li class="main__logo-list">lorem 10</li>
-                    <li class="main__logo-list">lorem 5</li>
-                    <li class="main__logo-list">lorem 6</li>
-                    <li class="main__logo-list">lorem 7</li>
-                    <li class="main__logo-list">lorem 8</li>
-                    <li class="main__logo-list">lorem 9</li>
-                    <li class="main__logo-list">lorem 10</li>
+                    <?php for ($i = 0; $i < count($companiesLeaved_list); $i++) { ?>
+                        <li class="main__logo-list"><?php echo $companiesLeaved_list[$i]['CompanyName']  ?></li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

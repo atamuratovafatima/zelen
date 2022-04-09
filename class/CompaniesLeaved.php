@@ -25,7 +25,7 @@ class CompaniesLeaved
             $this->conn->exec("DELETE FROM CompaniesLeaved");
             $stmt = $this->conn->prepare('INSERT INTO CompaniesLeaved (CompanyName, Logo) VALUES (:companyName, :logo)');
             for ($i = 0; $i < count($arr); $i++) {
-                $stmt->execute(array('companyName' => $arr[$i][0], 'logo' => $arr[$i][1]));
+                $stmt->execute(array('companyName' => $arr[$i][1], 'logo' => $arr[$i][0]));
             }
             $this->conn->commit();
 
