@@ -181,24 +181,25 @@
             <div class="map__container">
                 <h1 class="map__title">Map</h1>
 
-                <input type="radio" checked="checked" name="map" id="airspace" value="airspace">
+                <input type="radio" checked="checked" name="map" id="airspace" value="Air_space">
                 <label for="airspace" class="map__btn">Air space</label>
 
-                <input type="radio" name="map" id="rusanction" value="rusanction">
-                <label for="rusanction" class="map__btn">Spisok</label>
+                <input type="radio" name="map" id="rusanction" value="Sactions">
+                <label for="rusanction" class="map__btn">Sanctions</label>
 
-                <input type="radio" name="map" id="novisa" value="novisa">
+                <input type="radio" name="map" id="novisa" value="no_Entry_visa">
                 <label for="novisa" class="map__btn">No entry visa</label>
 
-                <input type="radio" name="map" id="ruposition" value="ruposition">
+                <input type="radio" name="map" id="ruposition" value="position_to_ru">
                 <label for="ruposition" class="map__btn">Position to RU</label>
 
-                <div class="map__airspace-container">
-                    <div>
-                        <h1 class="map__airspace-title">Air space</h1>
-                        <object class="svgWorldMap" type="image/svg+xml" data="./assets/img/map/world.svg"></object>
-                        <!-- document.querySelector(".svgWorldMap").getSVGDocument().getElementById("RU").style.fill = "red" -->
-                    </div>
+
+            </div>
+            <div>
+                <div>
+                    <h1 class="map__airspace-title">Air space</h1>
+                    <object class="svgWorldMap" type="image/svg+xml" data="./assets/img/map/world.svg"></object>
+                    <!-- document.querySelector(".svgWorldMap").getSVGDocument().getElementById("RU").style.fill = "red" -->
                 </div>
             </div>
         </section>
