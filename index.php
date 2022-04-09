@@ -196,7 +196,7 @@
                 <div class="map__airspace-container">
                     <div class="map__airspace">
                         <h1 class="map__airspace-title">Air space</h1>
-                        <object class="svgWorldMap" type="image/svg+xml" data="./assets/img/map/world2.svg"></object>
+                        <object class="svgWorldMap" type="image/svg+xml" data="./assets/img/map/world.svg"></object>
                         <!-- document.querySelector(".svgWorldMap").getSVGDocument().getElementById("RU").style.fill = "red" -->
                     </div>
                 </div>
