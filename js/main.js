@@ -1,9 +1,16 @@
+/*
 let coutriesList = document
   .querySelector(".svgWorldMap")
   .getSVGDocument()
   .querySelectorAll("path");
+*/
+getMapState();
 
-let c = [];
-coutriesList.forEach((e) => {
-  c.push([e.getAttribute("id"), e.getAttribute("title")]);
-});
+async function getMapState() {
+  let response = await fetch("/api/getMapState.php");
+
+  if (response.ok) {
+    let json = await response.json();
+    localStorage.setItem("mapState", JSON.stringify(json));
+  }
+}
