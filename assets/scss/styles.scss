@@ -18,16 +18,13 @@
 @import './header/header';
 @import './header/media-header';
 
-*{
-    transition: .2s;
-}
+@import './footer/footer';
 
 body{
-    background:rgba(41,24,122,1);
     background: radial-gradient(circle, rgba(95,39,205,1) 0%, rgba(41,24,122,1) 100%);
     position: relative;
 }
-body, .main__losses{
+.main__losses{
 
     &::-webkit-scrollbar {
         width: 1.5em;

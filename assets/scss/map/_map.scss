@@ -1,4 +1,7 @@
 .map{
+    &__svg-container{
+        margin-bottom: 5%;
+    }
     &__container{
         position: relative;
     }
@@ -7,20 +10,18 @@
         color: $color-white;
         text-align: center;
         text-transform: uppercase;
-        margin-top: 5em;
+        // margin-top: 5em;
     }
     &__btn{
         padding: 1em 2em 1em 2em;
-        display: inline-block;
         color: $color-white;
         @include font-nunitosans(16px);
         cursor: pointer;
+        width: 100%;
         position: relative;
         background: rgba(95,39,205,1);
         border-radius: 3px;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        margin-right: 1em;
+        
 
         &:hover{
             background-color:rgba(41,24,122,1);
@@ -29,40 +30,37 @@
     input[type="radio"]{
         position: absolute;
         top: 0;
-        left: -1em;
+        left: -3em;
         visibility: hidden;
         
         &#airspace:checked{
             & ~ .map__airspace-container{
-                transform: translateX(0);
-                transition: .2s;
                 position: relative;
+                display: block;
+
             }
         }
         &#rusanction:checked{
             & ~ .map__rusanction-container{
-                transform: translateX(0);
-                transition: .2s;
                 position: relative;
+                display: block;
             }
         }
         &#novisa:checked{
             & ~ .map__novisa-container{
-                transform: translateX(0);
-                transition: .2s;
                 position: relative;
+                display: block;
             }
         }
         &#ruposition:checked{
             & ~ .map__ruposition-container{
-                transform: translateX(0);
-                transition: .2s;
                 position: relative;
+                display: block;
             }
         }
         
     }
-    &__airspace, &__rusanction, &__novisa, &__ruposition{
+    &__container{
         margin: 1em 0;
         img{
             width: 100%;
@@ -78,9 +76,11 @@
         }
     }
     &__airspace-container, &__rusanction-container, &__novisa-container, &__ruposition-container{
-        transform: translateX(-150%);
+        transform: translateY(10%);
         transition: .2s;
         position: absolute;
+        display: none;
+        width: 100%;
     }
  
 }

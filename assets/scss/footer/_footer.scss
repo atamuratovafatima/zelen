@@ -1,0 +1,22 @@
+.footer{
+    background:rgba(41,24,122,1);
+    color: rgb(170, 170, 170);
+    @include flex(center, center);
+    padding: .5em 0;
+    text-align: center;
+    border-top: 1px solid $color-blue;
+    margin-top: 5em;
+
+    &__info{
+        &-container{
+            @include font-nunitosans(16px);
+            @include flex(center, center);
+            padding: .5em 0;
+
+            a:hover{
+                color: $color-white;
+            }
+
+        }
+    }
+}

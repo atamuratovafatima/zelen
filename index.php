@@ -7,29 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/css/swiper/slick.css" />
-    <link rel="stylesheet" type="text/css" href="/css/swiper/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="./css/swiper/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./css/swiper/slick-theme.css" />
     <script src="https://kit.fontawesome.com/67e895b2e2.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./assets/js/slick-slider/jquery-1.11.0.min.js" defer async></script>
-    <script type="text/javascript" src="./assets/js/slick-slider/jquery-migrate-1.2.1.min.js" defer async></script>
-    <script type="text/javascript" src="./assets/js/slick-slider/slick.min.js" defer async></script>
-    <script type="text/javascript" src="./assets/js/slick-slider/slick-styles__example.js" defer async></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" defer async></script>
-    <script type="text/javascript" src="./assets/js/chart.styles.js" defer async> </script>
-
     <title>UK and RU</title>
 </head>
 
 <body>
     <ul class="lang__container">
         <li class="lang__item">
-            <a href="ru" class="lang">Ru</a>
+            <div class="item__container">
+                <img src="./assets/img/currency/RUB.png" alt="ru">
+            </div>
+            <p><a href="ru" class="lang">Ru</a></p>
         </li>
         <li class="lang__item">
-            <a href="en" class="lang">En</a>
+            <div class="item__container">
+                <img src="./assets/img/currency/USD.png" alt="en">
+            </div>
+            <p><a href="en" class="lang">Eng</a></p>
         </li>
         <li class="lang__item">
-            <a href="donate" class="lang">Donate</a>
+            <div class="item__container">
+                <i class="fa-solid fa-coins fa-lg"></i>
+            </div>
+            <p><a href="donate" class="lang">Donate</a></p>
         </li>
     </ul>
     <nav class="nav">
@@ -59,7 +61,6 @@
             </div>
         </div>
     </nav>
-
     <div class="container">
         <div class="header__flex-container">
             <div class="header__flex-item">
@@ -114,24 +115,26 @@
                 <input type="radio" name="logo" id="logo-list">
                 <label for="logo-list" class="main__radio-btn list">Spisok</label>
 
-                <ul class="flex__list-container">
-                    <?php
-                    require_once($_SERVER['DOCUMENT_ROOT'] . '/class/CompaniesLeaved.php');
-                    $companiesLeaved = new CompaniesLeaved;
-                    $companiesLeaved_list = $companiesLeaved->get();
-                    for ($i = 0; $i < count($companiesLeaved_list); $i++) {
+                <div class="cards__list">
+                    <ul class="flex__list-container">
+                        <?php
+                        require_once($_SERVER['DOCUMENT_ROOT'] . '/class/CompaniesLeaved.php');
+                        $companiesLeaved = new CompaniesLeaved;
+                        $companiesLeaved_list = $companiesLeaved->get();
+                        for ($i = 0; $i < count($companiesLeaved_list); $i++) {
 
-                    ?>
-                        <li class="flex__list">
-                            <div class="flex__img-container">
-                                <img src="<?php echo $companiesLeaved_list[$i]['Logo']  ?>" alt="">
-                            </div>
-                            <div class="flex__hover-container">
-                                <p class="flex-hover"><?php echo $companiesLeaved_list[$i]['CompanyName']  ?></p>
-                            </div>
-                        </li>
-                    <?php } ?>
-                </ul>
+                        ?>
+                            <li class="flex__list">
+                                <div class="flex__img-container">
+                                    <img src="<?php echo $companiesLeaved_list[$i]['Logo']  ?>" alt="">
+                                </div>
+                                <div class="flex__hover-container">
+                                    <p class="flex-hover"><?php echo $companiesLeaved_list[$i]['CompanyName']  ?></p>
+                                </div>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
                 <ul class="main__logo-container">
                     <?php for ($i = 0; $i < count($companiesLeaved_list); $i++) { ?>
                         <li class="main__logo-list"><?php echo $companiesLeaved_list[$i]['CompanyName']  ?></li>
@@ -147,7 +150,6 @@
             <table class="main__table-container">
                 <tr>
                     <th class="main__table-list" rowspan="2">AU</th>
-
                     <th class="main__table-list" rowspan="2">Total Ukraine forces</th>
                     <th class="main__table-list" colspan="2">Ukraine losses</th>
                     <th class="main__table-list" rowspan="2">Total Russian forces</th>
@@ -175,31 +177,50 @@
                         <td class="main__table-list"><?php echo $losses_list[$i]['ru_losses_by_ru_news'] ?></td>
                     </tr>
                 <?php } ?>
+
             </table>
         </section>
         <section class="map">
             <div class="map__container">
                 <h1 class="map__title">Map</h1>
 
-                <input type="radio" checked="checked" name="map" id="airspace" value="Air_space">
+                <input type="radio" checked="checked" name="map" id="airspace">
                 <label for="airspace" class="map__btn">Air space</label>
 
-                <input type="radio" name="map" id="rusanction" value="Sactions">
-                <label for="rusanction" class="map__btn">Sanctions</label>
+                <input type="radio" name="map" id="rusanction">
+                <label for="rusanction" class="map__btn">Spisok</label>
 
-                <input type="radio" name="map" id="novisa" value="no_Entry_visa">
+                <input type="radio" name="map" id="novisa">
                 <label for="novisa" class="map__btn">No entry visa</label>
 
-                <input type="radio" name="map" id="ruposition" value="position_to_ru">
+                <input type="radio" name="map" id="ruposition">
                 <label for="ruposition" class="map__btn">Position to RU</label>
 
+                <div class="map__airspace-container">
+                    <div class="map__airspace">
+                        <h1 class="map__airspace-title">Air space</h1>
+                    </div>
+                </div>
 
-            </div>
-            <div>
-                <div>
-                    <h1 class="map__airspace-title">Air space</h1>
+                <div class="map__rusanction-container">
+                    <div class="map__rusanction">
+                        <h1 class="map__rusanction-title">Sunction to RU</h1>
+                    </div>
+                </div>
+
+                <div class="map__novisa-container">
+                    <div class="map__novisa">
+                        <h1 class="map__novisa-title">No enter visa</h1>
+                    </div>
+                </div>
+
+                <div class="map__ruposition-container">
+                    <div class="map__ruposition">
+                        <h1 class="map__ruposition-title">Position to RU</h1>
+                    </div>
+                </div>
+                <div class="map__svg-container">
                     <object class="svgWorldMap" type="image/svg+xml" data="./assets/img/map/world.svg"></object>
-
                 </div>
             </div>
         </section>
@@ -218,7 +239,7 @@
                 for ($i = 0; $i < count($personsNG_list); $i++) {
                 ?>
                     <li class="people__list">
-                        <a href="#" class="people__list-item">
+                        <div class="people__list-item">
                             <div class="people__avatar-container">
                                 <img src="./assets/img/ava/putin.jpg" class="people__avatar" alt="">
                             </div>
@@ -226,10 +247,9 @@
                                 <p class="people__description"><?php echo $personsNG_list[$i]['Name'] ?></p>
                                 <p class="people__description-text"><?php echo $personsNG_list[$i]['Description'] ?></p>
                             </div>
-                        </a>
+                        </div>
                     </li>
                 <?php } ?>
-
             </ul>
         </main>
         <main class="main">
@@ -249,34 +269,25 @@
                     <td class="main__table-list">lorem4</td>
                     <td class="main__table-list">lorem5</td>
                 </tr>
-                <tr>
-                    <td class="main__table-list">lorem1</td>
-                    <td class="main__table-list">lorem2</td>
-                    <td class="main__table-list">lorem3</td>
-                    <td class="main__table-list">lorem4</td>
-                    <td class="main__table-list">lorem5</td>
-                </tr>
-                <tr>
-                    <td class="main__table-list">lorem1</td>
-                    <td class="main__table-list">lorem2</td>
-                    <td class="main__table-list">lorem3</td>
-                    <td class="main__table-list">lorem4</td>
-                    <td class="main__table-list">lorem5</td>
-                </tr>
-                <tr>
-                    <td class="main__table-list">lorem1</td>
-                    <td class="main__table-list">lorem2</td>
-                    <td class="main__table-list">lorem3</td>
-                    <td class="main__table-list">lorem4</td>
-                    <td class="main__table-list">lorem5</td>
-                </tr>
             </table>
         </main>
-
     </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__info-container">
+                <p> &copy; Copyright Zelen.info. All rights reserved. <a href="#">Disclaimer and Privacy & Policy</a></p>
+            </div>
+        </div>
+    </footer>
 
+    <script type="text/javascript" src="./assets/js/slick-slider/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./assets/js/slick-slider/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/slick-slider/slick.min.js"></script>
+    <script type="text/javascript" src="./assets/js/slick-slider/slick-styles__example.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script type="text/javascript" src="./assets/js/chart.styles.js"> </script>
+    <script src="./js/main.js" defer></script>
 
 </body>
-<script src="./js/main.js" defer></script>
 
 </html>

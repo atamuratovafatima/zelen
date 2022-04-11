@@ -1,4 +1,6 @@
 .main{
+    height: 100%;
+
     &__title{
         @include font-nunitosans(30px);
         color: $color-white;
@@ -11,6 +13,10 @@
     & .container{
         padding: 1em 0;
 
+        .cards__list{
+            transform: translate(0);
+            margin: 0 auto;
+        }
         .flex{
             &__img-container{
                 & img{
@@ -100,7 +106,7 @@
                 transform: translateX(0);
                 transition: .2s;
             }
-            & ~ .flex__list-container{
+            & ~ .cards__list{
                 transform: translateX(-150%);
                 transition: .2s;
             }
@@ -127,10 +133,10 @@
             padding: 0 .5em 0 0;
         }
         &.list::before{
-            content: "\f0ca";
+            content: "\f039";
         }
         &.card::before{
-            content: "\e196";
+            content: "\f58e";
         }
     }
     &__btn-title{
@@ -142,5 +148,5 @@
     }
     & .margin-top{
         margin-top: 5%;
-    }
+    }   
 }   
