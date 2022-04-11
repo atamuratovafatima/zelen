@@ -1,10 +1,3 @@
-/*
-let coutriesList = document
-  .querySelector(".svgWorldMap")
-  .getSVGDocument()
-  .querySelectorAll("path")
-*/
-
 getMapState()
 
 document

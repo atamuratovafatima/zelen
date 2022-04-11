@@ -184,16 +184,16 @@
             <div class="map__container">
                 <h1 class="map__title">Map</h1>
 
-                <input type="radio" checked="checked" name="map" id="airspace">
+                <input type="radio" checked="checked" name="map" id="airspace" value="Air_space">
                 <label for="airspace" class="map__btn">Air space</label>
 
-                <input type="radio" name="map" id="rusanction">
-                <label for="rusanction" class="map__btn">Spisok</label>
+                <input type="radio" name="map" id="rusanction" value="Sactions">
+                <label for="rusanction" class="map__btn">Sanctions</label>
 
-                <input type="radio" name="map" id="novisa">
+                <input type="radio" name="map" id="novisa" value="no_Entry_visa">
                 <label for="novisa" class="map__btn">No entry visa</label>
 
-                <input type="radio" name="map" id="ruposition">
+                <input type="radio" name="map" id="ruposition" value="position_to_ru">
                 <label for="ruposition" class="map__btn">Position to RU</label>
 
                 <div class="map__airspace-container">
